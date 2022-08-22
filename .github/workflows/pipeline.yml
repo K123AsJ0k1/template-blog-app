@@ -20,5 +20,3 @@ jobs:
       - name: deploy
         run: npm run deploy
         working-directory: './blog-app'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
