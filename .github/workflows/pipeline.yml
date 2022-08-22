@@ -12,6 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
+      - name: install
+        run: npm install
+        working-directory: './blog-app'
       - name: deploy
         run: npm run deploy
         working-directory: './blog-app'
