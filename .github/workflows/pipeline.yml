@@ -20,7 +20,7 @@ jobs:
       - name: email
         run: git config --global user.email "niila.siilasjoki@gmail.com"
       - name: username
-        run: git config --global user.name "Niila Siilasjoki"
+        run: git config --global user.name "K123AsJ0k1"
       - name: deploy
         run: npm run deploy
         working-directory: './blog-app'
