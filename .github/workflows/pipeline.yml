@@ -17,6 +17,9 @@ jobs:
       - name: install
         run: npm install
         working-directory: './blog-app'
+      - name: setup
+        run: git config --global user.email "niila.siilasjoki@gmail.com"
+        run: git config --global user.name "Niila Siilasjoki"
       - name: deploy
         run: npm run deploy
         working-directory: './blog-app'
