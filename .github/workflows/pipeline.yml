@@ -17,3 +17,13 @@ jobs:
       - name: install
         run: npm install
         working-directory: './blog-app'
+      - name: build
+        run: npm run predeploy
+        working-directory: './blog-app'
+      - name: Deploy
+        uses: crazy-max/ghaction-github-pages@v1
+        with:
+          target_branch: gh-pages
+          build_dir: build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
