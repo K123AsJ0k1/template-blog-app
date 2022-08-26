@@ -1,28 +1,17 @@
-//import { useEffect, useState } from 'react';
-//import ReactMarkdown from 'react-markdown'
 import Header from './components/Header';
 import Text from './components/Text';
+import Home from './components/Home';
 import './App.css'
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
-  /*
-  const [text, setText] = useState('')
-  
-  useEffect(() => {
-    import('./Hello_world.md')
-      .then(res => 
-        fetch(res.default))
-          .then(response => response.text())
-          .then(response => setText(response))
-          .catch(err => console.log(err)
-      )
-  }, [])
-  */
-  
+  //<Text path='/README.md'/>
   return (
     <div className='wrapper'>
       <Header/>
-      <Text/>
+      <Routes>
+        <Route path="/" element={<Home/>} exact/>
+      </Routes>
     </div>
   );
 }

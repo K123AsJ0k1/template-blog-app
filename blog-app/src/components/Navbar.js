@@ -4,11 +4,9 @@ import Bartab from './Bartab'
 const Navbar = () => {
     return (
         <div className='nav'>
-            <Bartab name='Tab'/>
-            <Bartab name='Tab'/>
-            <Bartab name='Tab'/>
-            <Bartab name='Tab'/>
-            <Bartab name='Tab'/>
+            <Bartab name='Home'/>
+            <Bartab name='Content'/>
+            <Bartab name='About me'/>
         </div>
     )
 }

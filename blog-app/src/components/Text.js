@@ -1,12 +1,13 @@
 import '../App.css'
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown'
+//import test from '../Texts/Home.md'
 
-const Text = () => {
+const Text = ({ path }) => {
   const [text, setText] = useState('')
   
   useEffect(() => {
-    import('../Hello_world.md')
+    import('../Texts/Home.md')
       .then(res => 
         fetch(res.default))
           .then(response => response.text())
