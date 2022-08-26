@@ -1,7 +1,11 @@
-import { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown'
+//import { useEffect, useState } from 'react';
+//import ReactMarkdown from 'react-markdown'
+import Header from './components/Header';
+import Text from './components/Text';
+import './App.css'
 
-function App() {
+const App = () => {
+  /*
   const [text, setText] = useState('')
   
   useEffect(() => {
@@ -13,10 +17,12 @@ function App() {
           .catch(err => console.log(err)
       )
   }, [])
-  //sad
+  */
+  
   return (
-    <div>
-      <ReactMarkdown>{text}</ReactMarkdown>
+    <div className='wrapper'>
+      <Header/>
+      <Text/>
     </div>
   );
 }
