@@ -1,9 +1,9 @@
 import '../App.css'
 
-const Bartab = ({name}) => {
+const Bartab = ({name, url}) => {
     return (
         <div className='tab'>
-            <p>{name}</p>
+            <a href={url}>{name}</a>
         </div>
     )
 }

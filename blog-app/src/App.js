@@ -1,19 +1,21 @@
 import Header from './components/Header';
 import Text from './components/Text';
-import Home from './components/Home';
+import ContentList from './components/ContentList';
+import { Navigate, Routes, Route } from 'react-router-dom';
 import './App.css'
-import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
-  //<Text path='/README.md'/>
   return (
     <div className='wrapper'>
       <Header/>
       <Routes>
-        <Route path="/" element={<Home/>} exact/>
+        <Route path="/" element={<Text path="Home"/>} exact/>
+        <Route path="/content" element={<ContentList/>} exact/>
+        <Route path="/about_me" element={<Text path="About_Me"/>} exact/>
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
