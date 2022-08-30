@@ -1,6 +1,6 @@
 import Header from './components/Header';
 import Text from './components/Text';
-import ContentList from './components/ContentList';
+import Content from './components/Content';
 import { Navigate, Routes, Route } from 'react-router-dom';
 import './App.css'
 
@@ -10,7 +10,7 @@ const App = () => {
       <Header/>
       <Routes>
         <Route path="/" element={<Text path="Home"/>} exact/>
-        <Route path="/content" element={<ContentList/>} exact/>
+        <Route path="/content" element={<Content/>} exact/>
         <Route path="/about_me" element={<Text path="About_Me"/>} exact/>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
