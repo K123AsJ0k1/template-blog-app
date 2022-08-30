@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import '../App.css'
+import useMetadata from "../hooks/useMetadata"
 
-const ContentListTitle = ({name, setTextName}) => {
+const ContentListTitle = ({name}) => {
+    const navigate = useNavigate()
     return (
         <div className="contentListTitle">
-            <button onClick={() => setTextName(name)}>{name}</button>
+            <button onClick={() => navigate(`/content/${name}-1`)}>{name}</button>
         </div>
     )
 }
@@ -37,41 +40,28 @@ const ContentListInfo = () => {
     )
 }
 
-const ContentListItem = ({title, setTextName, chapters}) => {
-    //<ul>{chapters.map(chapter => <li key={chapter.id}>{chapter.name}</li>)}</ul>
+const ContentListItem = ({title}) => {
     return(
         <div className="contentListItem">
-            <ContentListTitle name={title} setTextName={setTextName}/>
+            <ContentListTitle name={title}/>
             <ContentListdescription/>
             <ContentListInfo/>
         </div>
     )
 }
 
-const ContentList = ({setTextName,texts}) => {
-    const [list, setList] = useState({})
+const ContentList = ({texts}) => {
+    const { list } = useMetadata() 
     
-    useEffect(() => {
-        let tempList = new Map([])
-        texts?.map((text) => {
-            if (text.name.includes('-')) {
-                const key = text.name.split('-')[0]
-                
-                if (tempList.has(key)) {
-                    tempList.set(key, [...tempList.get(key), text])
-                } else {
-                    tempList.set(key, [text])
-                }
-            }
-        })
-        setList(Object.fromEntries(tempList))
-    },[texts])
+    if (list) { 
+        return (
+            <div className="contentList">
+                {Object.keys(list).map((key,index) => <ContentListItem key={index} title={key}/>)}
+            </div>
+        )
+    }
 
-    return (
-        <div className="contentList">
-            {Object.keys(list).map((key,index) => <ContentListItem key={index} title={key} setTextName={setTextName} chapters={list[key]}/>)}
-        </div>
-    )
+    return null
 }
 
 export default ContentList
