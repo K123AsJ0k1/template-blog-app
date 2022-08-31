@@ -82,8 +82,42 @@ body {
   margin-top: 1vh;
 }
 
-.contentChapters {
+.chapters {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  padding-top: 2vh;
+  padding-bottom: 13vh;
+}
+
+.chapterClick {
   display: flex;
   flex-direction: row;
   align-self: center;
+}
+
+.chapterDropdown {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  width: 16vw;
+  height: 4vh;
+  background-color: grey;
+}
+
+.dropdownHeader {
+  display: flex;
+  align-self: center;
+}
+
+.dropdownList {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+}
+
+.dropdownListItem {
+  list-style: none;
+  margin-bottom: 0.5vh;
+  margin-top: 0.5vh;
 }
